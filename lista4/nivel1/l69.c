@@ -6,8 +6,8 @@ int main(){
         scanf("%d", &n);
 
         for( ; n != 0; ){
-                m += n % 10;
-		n /= 10; 
+            m += n % 10;
+            n /= 10; 
         }
 
         printf("A soma dos digitos eh %d. \n", m);
