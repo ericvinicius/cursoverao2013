@@ -1,0 +1,15 @@
+Aluno: Eric Vinicius Camargo de Campos
+Prova 2:
+
+
+Questoes feitas com arquivos ".C" : 
+
+P01 - P02 - P03 - P04c - P05 - P06a - P07 - P09 - P10
+
+Questoes dissertativas :
+
+P04a : O "03%d" serve para completar, com "zeros", o valor "res" ate ter tres digitos.
+
+P04b : Nao pois na simulacao do L81-d, o usuario coloca que a sequencia tem apenas dois digitos, e ele coloca o "15", aperta "enter", e entao coloca o "17", e aperta "enter" denovo. Com este programa, ele para e faz as contas, com os dois primeiros numeros do usuario.
+
+P08 : O programa eleva, de 1 a n, o valor m e os soma. 
