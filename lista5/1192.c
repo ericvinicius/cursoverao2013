@@ -1,81 +1,58 @@
+/* 
+* Introducao a Programacao - VERAO 2013 - IME - USP
+* Prof. Neuton de Oliveira Braga Jr
+* 5 Lista de Exercicios
+*
+* URI Online Judge - www.urionlinejudge.com.br
+* Problema 1192
+*
+* Aluno: Eric Vinicius Camargo de Campos
+*
+* Turma: Manha
+*/
 #include<stdio.h>
 #include<stdlib.h>
+/*funcao para saber se a letra e minuscula*/
 int minuscula(char c){
 	return (c >= 'a' && c <= 'z');
 }
-
+/*funcao para saber se a letra e maiuscula*/
 int maiuscula(char c){
 	return (c >= 'A' && c <= 'Z');
 }
 
-int letra(char c){
-	if(maiuscula(c)){
-		return 'M';
-	} else if(maiuscula(c)) {
-		return 'm';
-	}
-	return 0;
-}
-
-int numero(char c){
-	return (c >= '0' && c <= '9');
-}
-
 int main(){
-	int c1[100000], c2[100000], c3[100000];
-	int max, res, j, i;
+	/*Declaracao de Variaveis*/
+	char str[5];
+	int max, res = 0, i, cont = 0;
 
+	/*Entrada de quantos calculos seram feitos*/
 	scanf("%d", &max);
 
+	/*Laco para repetir os calculos*/
 	for(i = 0; i <= max; i++){
-		printf("i1 = %d\n", i);
+		/*Entrada das "expressoes", e define parada*/
+		fgets(str, 5, stdin);
+		str[3] = '\0';
 
-		/*c1[i] = getchar();
-		c1[i] = getchar();*/		
+		/*Verificacao para saber qual operacao devera ser feita.*/
+		if(str[0] == str[2]){
+			res = (str[0]-48) * (str[0]-48);
+			cont++;
 
-		while(numero(c1[i])){
-			c1[i] = getchar();
+		} else if(maiuscula(str[1])){
+			res = ((str[0]-48) - (str[2]-48));
+			cont++;
+		
+		} else if(minuscula(str[1])){
+			res = ((str[0]-48) + (str[2]-48));
+			cont++;
 		}
-		printf("i1.1 = %d\n", i);
-
-		/*c1[i] = getchar();
-		c1[i] = getchar();*/
-
-		while(letra(c2[i])){
-			c2[i] = getc(stdin);
+		
+		if(cont > 0){
+			printf("%d\n", res);
 		}
-		printf("i1.2 = %d\n", i);
-
-		/*c1[i] = getchar();
-		c1[i] = getchar();*/
-
-		while(numero(c3[i])){
-			c3[i] = getc(stdin);
-		}
-		printf("i2 =%d\n", i);
-
 	}
-
-	printf("i3 = %d\n", i);
-
-	for(j = 0; j <= i; j++){
-		printf("j1 = %d\n", j);
-
-		if(c1[j] == c3[j]){
-			res = c1[j] * c3[j];
-
-		} else if(c2[j] == 'M'){
-			res = (c1[j] + c3[j]);
-
-		} else if(c2[j] == 'm'){
-			res = (c1[j] - c3[j]);
-		}
-		printf("j2 = %d\n", j);
-
-
-		printf("%d\n", res);
-	}
-
 
 	return 0;
 }

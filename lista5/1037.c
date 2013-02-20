@@ -1,9 +1,24 @@
+/* 
+* Introducao a Programacao - VERAO 2013 - IME - USP
+* Prof. Neuton de Oliveira Braga Jr
+* 5 Lista de Exercicios
+*
+* URI Online Judge - www.urionlinejudge.com.br
+* Problema 1037
+*
+* Aluno: Eric Vinicius Camargo de Campos
+*
+* Turma: Manha
+*/
 #include<stdio.h>
 int main(){
+	/* Declaracao de variaveis*/
 	float n;
 
+	/* Leitura do teclado */
 	scanf("%f", &n);
 
+	/* Verificacoes para imprimir da forma correta */
 	if(n >= 0.0 && n <= 25.0){
 		printf("Intervalo [0,25]\n");
 
