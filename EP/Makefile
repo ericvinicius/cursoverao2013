@@ -1,9 +1,21 @@
+#
+#	Introducao a Programacao - VERAO 2013 - IME - USP
+#	Prof. Neuton de Oliveira Braga Jr
+#
+#	Exercicio Programa - BATALHA NAVAL
+#
+#	Funcoes especificas para configuracao, gerenciamento e execucao do jogo batalha naval .
+#
+#	Aluno : Eric Vinicius Camargo de Campos
+#	Turma : Manha
+#
+
 # regra default, para compilar tudo
 all: batalhanaval
 
 # o programa Ž feito de v‡rios arquivos fontes
 batalhanaval: batnaval.o gerador_navio.o impressao_matriz.o
-	gcc batnaval.o gerador_navio.o impressao_matriz.o -o batalhanaval
+	gcc -g -Wall -ansi -pedantic batnaval.o gerador_navio.o impressao_matriz.o -o batalhanaval
 
 # regra para o arquivo "batalhanaval.o".
 batnaval.o: batnaval.c batnaval.h gerador_navio.h impressao_matriz.h

@@ -1,3 +1,16 @@
+/*
+*	Introducao a Programacao - VERAO 2013 - IME - USP
+*	Prof. Neuton de Oliveira Braga Jr
+*
+*	Exercicio Programa - BATALHA NAVAL
+*
+*	Funcoes especificas para configuracao, gerenciamento e execucao do jogo batalha naval .
+*
+*	Aluno : Eric Vinicius Camargo de Campos
+*	Turma : Manha
+*
+*
+*/
 #include "definicoes.h"
 
 #ifdef GERADOR_NAVIO_H

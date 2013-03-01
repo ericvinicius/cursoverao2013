@@ -1,14 +1,33 @@
+/*
+*	Introducao a Programacao - VERAO 2013 - IME - USP
+*	Prof. Neuton de Oliveira Braga Jr
+*
+*	Exercicio Programa - BATALHA NAVAL
+*
+*	Funcoes especificas para configuracao, gerenciamento e execucao do jogo batalha naval .
+*
+*	Aluno : Eric Vinicius Camargo de Campos
+*	Turma : Manha
+*
+*
+*
+*
+* Declaracao de bibliotecas criadas para este EP
+*/
 #include "gerador_navio.h"
 #include "definicoes.h"
 
+/*
+ *Declaracoes de bibliotecas padroes
+ */
 #include <stdlib.h>
-#include <time.h>
 
+/*
+ * Esta funcao adiciona um navio em uma posicao aleatorio do tabuleiro
+ */
 void adiciona_navio_em_posicao_aleatoria(char naviosJogador[MAXLIN][MAXCOL], int linhas, int colunas, int navios, int tamanho_maximo_navio) {
 	/* Gera uma posicao aleatoria de um navio */
 	int lin, col, aux, sentido;
-
-	srand(time(0));
 
 	do {
 		lin = rand() % linhas;
@@ -59,6 +78,9 @@ void adiciona_navio_em_posicao_aleatoria(char naviosJogador[MAXLIN][MAXCOL], int
 	}
 }
 
+/*
+ * Esta funcao sorteia os navios para cada jogador
+ */
 void sorteia_navios_por_jogador(char naviosJogador[MAXLIN][MAXCOL], int linhas, int colunas, int navios) {
 	int n, menor_lado_tabuleiro = (linhas < colunas) ? linhas : colunas;
 	for (n = 1; n <= navios; n++) {
@@ -66,6 +88,9 @@ void sorteia_navios_por_jogador(char naviosJogador[MAXLIN][MAXCOL], int linhas, 
 	}
 }
 
+/*
+ * Esta funcoa sorteia os navios para os dois jogadores
+ */
 void sorteia_navios(char naviosJogador1[MAXLIN][MAXCOL], char naviosJogador2[MAXLIN][MAXCOL], int linhas, int colunas, int navios) {
 	sorteia_navios_por_jogador(naviosJogador1, linhas, colunas, navios);
 	sorteia_navios_por_jogador(naviosJogador2, linhas, colunas, navios);

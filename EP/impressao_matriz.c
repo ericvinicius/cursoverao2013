@@ -1,8 +1,24 @@
+/*
+*	Introducao a Programacao - VERAO 2013 - IME - USP
+*	Prof. Neuton de Oliveira Braga Jr
+*
+*	Exercicio Programa - BATALHA NAVAL
+*
+*	Funcoes especificas para configuracao, gerenciamento e execucao do jogo batalha naval .
+*
+*
+*	Aluno : Eric Vinicius Camargo de Campos
+*	Turma : Manha
+*
+*
+*/
 #include "impressao_matriz.h"
 
 #include<stdio.h>
 
-/* Funcao para imrprimir o nomes dos jogadores em cima dos tabuleiros */
+/* Funcao para imrprimir o nomes dos jogadores em cima dos tabuleiros!
+ * esta funcao faz algumas contas para poder imprimir o nome exatamente no meio do tabuleiro.
+ */
 void imprimeEspacosNomes(int colunas) {
 	int espacosNome, i;
 
@@ -21,6 +37,10 @@ void imprimeEspacosNomes(int colunas) {
 	printf("Jogador 2\n");
 }
 
+/*
+ * Esta Funcao e responsavel por imprimir cada linha do tabuleiro.
+ * Ela imprimi a linha do jogador 1 e a do jogador 2, em uma unica execucao.
+ */
 void imprimeLinha(int qtd_colunas, int linha, char tabuleiroJogador1[MAXLIN][MAXCOL], char tabuleiroJogador2[MAXLIN][MAXCOL]) {
 	int col;
 
@@ -74,6 +94,10 @@ void imprimeLinha(int qtd_colunas, int linha, char tabuleiroJogador1[MAXLIN][MAX
 	printf("\n");
 }
 
+/*
+ * Esta funcao imprimi o tabuleiro dos dois jogadores, com uma unica execucao.
+ * Mas para imprimir cada linha do tabuleiro ele chama a funcao imprimeLinha.
+ */
 void imprimeTabuleiro(int linhas, int colunas, char tabuleiroJogador1[MAXLIN][MAXCOL], char tabuleiroJogador2[MAXLIN][MAXCOL]) {
 	int lin, col;
 
@@ -94,7 +118,7 @@ void imprimeTabuleiro(int linhas, int colunas, char tabuleiroJogador1[MAXLIN][MA
 			}
 			printf("\n");
 
-			/* Para imprimir as letra < */
+			/* Para imprimir as letra de indice do tabuleiro ---> */
 			printf("    %c", 97); /* esta linha imprimi a letra 'a', que sempre havera */
 
 			for (col = 98; col <= colunas + 96; col++) {
@@ -106,35 +130,19 @@ void imprimeTabuleiro(int linhas, int colunas, char tabuleiroJogador1[MAXLIN][MA
 			for (col = 98; col <= colunas + 96; col++) {
 				printf(" %c", col);
 			}
-			/* ate aqui > */
+			/* <--- ate aqui. */
 		}
 	}
 
 	printf("\n");
 }
 
-/* Funcao para DEBUG, para mostrar a matriz de tentativas */
-void DEBUG_imprime_tabuleiro(char tabuleiro[MAXLIN][MAXCOL]) {
-	int lin, col;
-
-	/* Inicia da linha e coluna 1 pois esta sendo desconsiderado o 0 */
-	for (lin = 1; lin < MAXLIN; lin++) {
-		for (col = 1; col < MAXCOL; col++) {
-			if (tabuleiro[lin][col] == VAZIO) {
-				printf(" %c", VAZIO_DEBUG);
-			} else {
-				printf(" %c", tabuleiro[lin][col]);
-			}
-		}
-		printf("\n");
-	}
-	printf("\n");
-}
-
+/*
+ * Esta funcao chama a funcao que coloca os nomes em cima das matrizes e a funcao que imprime as matrizes.
+ */
 void imprime_tabuleiros(char tabuleiroJogador1[MAXLIN][MAXCOL], char tabuleiroJogador2[MAXLIN][MAXCOL], int linhas, int colunas) {
 	imprimeEspacosNomes(colunas);
 	imprimeTabuleiro(linhas, colunas, tabuleiroJogador1, tabuleiroJogador2);
-
 	printf("\n");
 }
 
@@ -148,6 +156,9 @@ void limpa_matriz(char matriz[MAXLIN][MAXCOL]) {
 	}
 }
 
+/*
+ * Est funcao serve para limpar todos os valores das matrizes, para ficar com lixo de memoria.
+ */
 void limpa_matrizes(char tabuleiroJogador1[MAXLIN][MAXCOL], char tabuleiroJogador2[MAXLIN][MAXCOL], char naviosJogador1[MAXLIN][MAXCOL],
 		char naviosJogador2[MAXLIN][MAXCOL]) {
 
